@@ -18,7 +18,7 @@ class _ContactsListState extends State<ContactsList> {
     //contacts.add(Contact(0, 'Lucas', 200)); Adicionando um contato para teste
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contacts'),
+        title: Text('Transfer'),
       ),
       body: FutureBuilder<List<Contact>>(
         initialData: [],
