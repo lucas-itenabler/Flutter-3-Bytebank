@@ -36,7 +36,7 @@ Future<List<Transaction>> findAll() async {
     'transactions',
   );
 
-  final response = await client.get(url);
+  final response = await client.get(url).timeout(Duration(seconds: 5));
   final List<dynamic> decodedJson = jsonDecode(response.body); //Decodifica o json para poder criar a lista de transações
   final List<Transaction> transactions = []; //criando a lista vazia
   for (Map<String, dynamic> transactionJson in decodedJson) { // Varre o Json decodificado extraindo o elemento, que representa o mapa que vai ter a cha String
