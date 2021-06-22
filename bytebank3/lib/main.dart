@@ -1,11 +1,14 @@
 import 'package:bytebank2/http/webclient.dart';
+import 'package:bytebank2/models/contact.dart';
+import 'package:bytebank2/models/transaction.dart';
 import 'package:bytebank2/screens/dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(BytebankApp());
-  findAll().then((transactions) => print('new transactions $transactions'));
+  save(Transaction(200.0, Contact(0, 'MC Nego Ban', 2000))).then((transaction) => print(transaction));
+  //findAll().then((transactions) => print('new transactions $transactions'));
     //findAll().then((contacts) => debugPrint(contacts.toString()));
 }
 
