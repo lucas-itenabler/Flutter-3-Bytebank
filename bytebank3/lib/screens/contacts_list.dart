@@ -1,3 +1,4 @@
+import 'package:bytebank2/components/progress.dart';
 import 'package:bytebank2/database/dao/contact_dao.dart';
 import 'package:bytebank2/models/contact.dart';
 import 'package:bytebank2/screens/contact_form.dart';
@@ -29,16 +30,7 @@ class _ContactsListState extends State<ContactsList> {
               //Significa que o future ainda não foi executado
               break;
             case ConnectionState.waiting:
-              return Center(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      CircularProgressIndicator(),
-                      Text('Loading'),
-                    ],
-                ),
-              );
+             return Progress();
               //break;
             case ConnectionState.active:
               //Traz o que ja foi carregado
